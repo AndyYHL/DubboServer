@@ -26,6 +26,7 @@ public class RabbitSendService {
         try {
             msg += "hello rabbitmq:"+new Date();
             System.out.println("Sender:"+msg);
+            int a = 2;
             //rabbitTemplate.convertAndSend(key, msg);
             this.rabbitTemplate.convertAndSend("hello", msg);
         } catch (Exception e) {
