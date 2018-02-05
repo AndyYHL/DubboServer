@@ -14,4 +14,6 @@ public class ClientApiFinal {
     public static final String CookieUser = "CookieUser";
     //redis
     public static final String RedisUser = "RedisUser";
+    //Session
+    public static final String SessionUser = "SessionUser";
 }
