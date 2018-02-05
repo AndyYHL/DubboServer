@@ -1,0 +1,83 @@
+# 服务器提供者端口
+server:
+  port: 8762
+spring:
+  # rabbitmq https://segmentfault.com/a/1190000011718099
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: test
+    password: test
+  #redis 配置
+  redis:
+    host: 192.168.31.69
+    port: 9379
+    database: 0
+    password:
+    timeout: 2000
+    pool:
+      min-idle: 0
+      max-idle: 8
+      max-active: 8
+      max-wait: -1
+  #jpa 数据库操作配置
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+ #jpa 微服务配置
+  application:
+    name: service-hi
+  sleuth:
+   enabled: false
+  #数据源配置
+  datasource:
+      url: jdbc:mysql://192.168.31.41:3306/sys?useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+   stream:
+      #kafka 消息队列 https://segmentfault.com/a/1190000009001987
+      kafka:
+        binder:
+          brokers: localhost
+          default-broker-port: 9092
+          zk-nodes: localhost
+          default-zk-port: 2182
+          auto-add-partitions: true
+          auto-create-topics: true
+          min-partition-count: 1
+      bindings:
+        output:
+          destination: event-demo
+          content-type: text/plain
+          producer:
+            partitionCount: 1
+      instance-count: 1
+      instance-index: 0
+  #网页编码设置
+  http:
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true
+#微服务器中心服务器链接
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  #是否向中心服务器发送IP地址
+  instance:
+      prefer-ip-address: true
+      instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+#设置链接的数据源类型
+zipkin:
+  storage:
+    type: mysql
+#系统日志记录
+logging:
+  level: info
