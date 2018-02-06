@@ -35,7 +35,7 @@ public class FinalJson {
     }
 
     /**
-     * 页面条数 啊都散发的说法
+     * 页面条数
      */
     public static final int pageSize = 10;
 
