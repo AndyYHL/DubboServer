@@ -19,6 +19,7 @@ import java.util.List;
 
 @SpringBootApplication
 @EnableDiscoveryClient
+//扫描Dao层
 @MapperScan("com.example.demo.dao")
 public class DemoApplication {
 	/**
