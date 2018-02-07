@@ -95,7 +95,9 @@ zipkin:
     type: mysql
 #系统日志记录
 logging:
-  level: info
+  level: warn
+  file: logs/spring-boot-logging.log
+
 
 mybatis:
   #扫描xml的位置
