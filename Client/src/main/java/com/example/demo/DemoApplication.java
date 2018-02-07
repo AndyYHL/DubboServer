@@ -3,6 +3,7 @@ package com.example.demo;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
@@ -18,6 +19,7 @@ import java.util.List;
 
 @SpringBootApplication
 @EnableDiscoveryClient
+@MapperScan("com.example.demo.dao")
 public class DemoApplication {
 	/**
 	 * 添加第三方json工具
