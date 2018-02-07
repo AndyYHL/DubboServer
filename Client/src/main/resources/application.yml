@@ -93,12 +93,13 @@ eureka:
 zipkin:
   storage:
     type: mysql
+
 #系统日志记录
 logging:
   level: warn
   file: logs/spring-boot-logging.log
 
-
+#mybatis 扫描配置
 mybatis:
   #扫描xml的位置
   mapper-locations: classpath:mybatis/*.xml
