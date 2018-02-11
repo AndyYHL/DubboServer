@@ -103,6 +103,8 @@ logging:
 mybatis:
   #扫描xml的位置
   mapper-locations: classpath:mybatis/*.xml
+  #扫描config
+  config-location: classpath:mybatis/mybatis-config.xml
   #扫描实体的位置
   type-aliases-package: com.example.demo.entity
 
