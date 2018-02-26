@@ -17,6 +17,7 @@ public class HelloService {
     UserRepository userRepository;
 
     public User hiService(Integer id) {
+        //获取用户
         return  userRepository.findOne(id);
     }
 }

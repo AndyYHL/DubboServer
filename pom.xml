@@ -74,6 +74,7 @@
 				</executions>
 
 				<configuration>
+
 					<!--推送到私有仓库-->
 					<!-- <imageName>localhost:5000/fox/fox-eureka-server</imageName> -->
 					<!--本地-->
@@ -92,6 +93,8 @@
 					<!--使用 Dockerfile-->
 					<!--<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>-->
 					<!--使用 Dockerfile  END-->
+					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+					<skipDockerBuild>false</skipDockerBuild>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
